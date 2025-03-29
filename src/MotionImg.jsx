@@ -14,7 +14,8 @@ export const MotionImg = ({ src, index, pos, setHoveredIndex, hoveredIndex, w, h
         const deltaY = clientY - centerY;
         const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
         const safeDistance = distance || 1;
-        const offset = 100; 
+        const offset = 100; // Adjust this value to change movement distance
+
         setTranslate({
             x: (deltaX / safeDistance) * offset,
             y: (deltaY / safeDistance) * offset
@@ -26,6 +27,7 @@ export const MotionImg = ({ src, index, pos, setHoveredIndex, hoveredIndex, w, h
         setTranslate({ x: 0, y: 0 });
     };
 
+   
     return (
         <motion.div
             className="relative cursor-pointer"
@@ -39,8 +41,8 @@ export const MotionImg = ({ src, index, pos, setHoveredIndex, hoveredIndex, w, h
             transition={{
                 type: "spring",
                 stiffness: hoveredIndex === index ? 100 : 30,
-                damping: hoveredIndex === index ? 10 : 15, 
-                mass: 0.8, 
+                damping: hoveredIndex === index ? 20 : 15, 
+                mass: 2, 
                 duration: hoveredIndex === index ? 1 : 1.5 
             }}
             onMouseMove={handleMouseMove}
@@ -51,7 +53,12 @@ export const MotionImg = ({ src, index, pos, setHoveredIndex, hoveredIndex, w, h
             <motion.img
                 src={src}
                 alt={`img-${index}`}
-                className={`w-${w} h-${h} object-cover shadow-lg`}
+                className={`object-cover shadow-lg`}
+                style={{ 
+                    width: `${w}rem`, 
+                    height: `${h}rem`,
+                     // Ensures it doesn't overflow container
+                }}
                 whileHover={{
                     boxShadow: "0px 10px 20px rgba(255, 255, 255, 0.5)"
                 }}

@@ -56,8 +56,8 @@ const Homepage = () => {
                                 pos={[xPos, [160, 70, 500, 400][i]]}
                                 setHoveredIndex={setHoveredIndex}
                                 hoveredIndex={hoveredIndex}
-                                w={75}
-                                h={45}
+                                w={18.5}
+                                h={10.5}
                                 Content={imgContent[i]}
                             />
                         ) : (
