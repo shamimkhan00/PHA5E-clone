@@ -1,0 +1,24 @@
+/* Floating Animations */
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(5px, 5px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.will-change-transform { will-change: transform; }
+
+.text-outline {
+    -webkit-text-stroke: 2px gray; /* Adjust thickness and color */
+    color: transparent;
+  }

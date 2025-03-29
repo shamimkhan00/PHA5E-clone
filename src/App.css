@@ -1,0 +1,49 @@
+/* Keep dark background throughout */
+body {
+  margin: 0;
+  background-color: rgb(33,33,33);
+}
+
+@keyframes strokeAnimation {
+  0% {
+    stroke-dashoffset: 2000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillAnimation {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.stroke-text {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 2000;
+  animation: strokeAnimation 3.5s cubic-bezier(0.65, 0, 0.35, 1) forwards; /* Slower animation */
+}
+
+.fill-text {
+  fill: #fff;
+  clip-path: inset(100% 0 0 0);
+  animation: fillAnimation 2s cubic-bezier(0.65, 0, 0.35, 1) forwards; /* Slower fill */
+  animation-delay: 1s; /* Start after stroke animation */
+}
+
+text {
+  font-size: 130px;
+  font-weight: bold;
+  font-family: 'Area_Normal', Helvetica, Arial, sans-serif;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
