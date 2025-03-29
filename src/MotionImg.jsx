@@ -52,6 +52,7 @@ export const MotionImg = ({ src, index, pos, setHoveredIndex, hoveredIndex, w, h
         >
             <motion.img
                 src={src}
+                loading="lazy"
                 alt={`img-${index}`}
                 className={`object-cover shadow-lg`}
                 style={{ 
