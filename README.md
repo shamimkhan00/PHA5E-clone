@@ -1,5 +1,3 @@
-# React + Vite
-
 # PHA5E Website Clone
 
 A modern, interactive clone of the PHA5E (https://www.pha5e.com/) website built with React, Tailwind CSS, and Framer Motion.
